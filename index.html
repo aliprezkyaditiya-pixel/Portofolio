@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D Interactive Portfolio</title>
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="styles.css">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    
+    <!-- AOS Animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div class="loading-screen" id="loading">
+        <div class="loader"></div>
+        <div class="loading-text">Loading Experience...</div>
+    </div>
+
+    <!-- Custom Cursor -->
+    <div class="cursor"></div>
+    <div class="cursor-follower"></div>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <span class="logo-text">Portfolio</span>
+                <span class="logo-dot"></span>
+            </div>
+            
+            <div class="menu-toggle" id="menuToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#home" class="nav-link active">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#skills" class="nav-link">Skills</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="pages-container">
+        <!-- HOME PAGE -->
+        <section id="home" class="page active">
+            <div class="hero">
+                <div class="hero-content">
+                    <h1 class="hero-title">
+                        <span class="title-line">Hi, I'm <span class="highlight">Alief</span></span>
+                        <span class="title-line">Full Stack Developer</span>
+                        <span class="title-line">& Mobile Apps Development</span>
+                    </h1>
+                    <p class="hero-description">
+                        I create immersive digital experiences with smooth animations and interactive 3D elements.
+                        Based in Lubuk Dalam, working worldwide.
+                    </p>
+                    <div class="hero-buttons">
+                        <a href="#projects" class="btn primary">View Work</a>
+                        <a href="#contact" class="btn secondary">Contact Me</a>
+                    </div>
+                </div>
+                <div class="canvas-container" id="canvas-container"></div>
+            </div>
+
+            <!-- Featured Services -->
+            <div class="featured-services">
+                <div class="container">
+                    <div class="services-grid">
+                        <div class="service-card" data-aos="fade-up">
+                            <div class="service-icon web">
+                                <i class="ri-code-line"></i>
+                            </div>
+                            <h3>Web Development</h3>
+                            <p>Building responsive and performant websites with modern technologies</p>
+                        </div>
+                        <div class="service-card" data-aos="fade-up" data-aos-delay="100">
+                            <div class="service-icon design">
+                                <i class="ri-cube-line"></i>
+                            </div>
+                            <h3>3D Design</h3>
+                            <p>Creating immersive 3D experiences with Three.js and WebGL</p>
+                        </div>
+                        <div class="service-card" data-aos="fade-up" data-aos-delay="200">
+                            <div class="service-icon mobile">
+                                <i class="ri-smartphone-line"></i>
+                            </div>
+                            <h3>Mobile Apps</h3>
+                            <p>Developing cross-platform mobile applications with React Native</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quick Stats -->
+            <div class="quick-stats">
+                <div class="container">
+                    <div class="stats-grid">
+                        <div class="stat-item" data-aos="zoom-in">
+                            <span class="stat-number">10+</span>
+                            <span class="stat-label">Projects</span>
+                        </div>
+                        <div class="stat-item" data-aos="zoom-in" data-aos-delay="100">
+                            <span class="stat-number">0</span>
+                            <span class="stat-label">Clients</span>
+                        </div>
+                        <div class="stat-item" data-aos="zoom-in" data-aos-delay="200">
+                            <span class="stat-number">3+</span>
+                            <span class="stat-label">Years</span>
+                        </div>
+                        <div class="stat-item" data-aos="zoom-in" data-aos-delay="300">
+                            <span class="stat-number">10+</span>
+                            <span class="stat-label">Projects</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="scroll-indicator">
+                <div class="mouse"></div>
+                <span>Scroll Down</span>
+            </div>
+        </section>
+
+        <!-- ABOUT PAGE -->
+        <section id="about" class="page">
+            <div class="container">
+                <div class="section-header" data-aos="fade-up">
+                    <span class="section-subtitle">Get to Know Me</span>
+                    <h2 class="section-title">About <span>Me</span></h2>
+                </div>
+
+                <div class="about-wrapper">
+                    <div class="about-left" data-aos="fade-right">
+                        <div class="about-image">
+                            <img src="./images/alief.jpg" alt="Profile">
+                            <div class="experience-badge">
+                                <span class="years">3+</span>
+                                <span class="label">Years Experience</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="about-right" data-aos="fade-left">
+                        <h3>Full Stack Developer & Mobile Apps Development</h3>
+                        <p class="about-text">
+                            I am very enthusiastic about creating immersive digital experiences that push the boundaries of what is possible on the web.
+                             My journey in the world of technology began when I was 11 years old.
+                              I once stopped learning about technology due to device limitations, but I did not give up. I tried to get a powerful device, and then I went back to exploring technology until now.
+                        </p>
+
+                        <div class="about-tabs">
+                            <button class="tab-btn active" data-tab="experience">Experience</button>
+                            <button class="tab-btn" data-tab="education">Education</button>
+                            <button class="tab-btn" data-tab="personal">Personal</button>
+                        </div>
+
+                        <!-- Experience Tab -->
+                        <div class="tab-content active" id="experience-tab">
+                            <div class="timeline">
+                                <div class="timeline-item">
+                                    <div class="timeline-date">2025 - Present</div>
+                                    <h4>Vibe Code</h4>
+                                    <p class="company">Full Stack Developer</p>
+                                    <p>As times have changed, I followed it and chose to become a vibe code because I already have a little fundamental knowledge, so I want to accelerate my progress with the help of this artificial technology</p>
+                                </div>
+                                <div class="timeline-item">
+                                    <div class="timeline-date">2022 - 2024</div>
+                                    <h4>Website Developer</h4>
+                                    <p class="company">Full Stack Developer</p>
+                                    <p>I am learning the fundamentals of Full Stack Development, I am learning from the beginning HTML, CSS, JavaScript</p>
+                                </div>
+                                <div class="timeline-item">
+                                    <div class="timeline-date">2020 - 2022</div>
+                                    <h4>Game Developer</h4>
+                                    <p class="company">Creating Your Own Growtopia Server</p>
+                                    <p>I created a Growtopia server on my own, starting just as a hobby until now I like technology</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Education Tab -->
+                        <div class="tab-content" id="education-tab">
+                            <div class="education-grid">
+                                <div class="edu-card">
+                                    <i class="ri-graduation-cap-line"></i>
+                                    <h4>Sekolah Dasar</h4>
+                                    <p class="institution">Sekolah Dasar Negri 06</p>
+                                    <p class="year">2017 - 2023</p>
+                                </div>
+                                <div class="edu-card">
+                                    <i class="ri-pencil-ruler-2-line"></i>
+                                    <h4>Sekolah Menengah Pertama</h4>
+                                    <p class="institution">Sekolah Menengah Pertama 01</p>
+                                    <p class="year">2023 - 2026</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Personal Tab -->
+                        <div class="tab-content" id="personal-tab">
+                            <div class="personal-info">
+                                <div class="info-item">
+                                    <span class="label">Name:</span>
+                                    <span class="value">Alief Rezky Aditya</span>
+                                </div>
+                                <div class="info-item">
+                                    <span class="label">Age:</span>
+                                    <span class="value">15 Years</span>
+                                </div>
+                                <div class="info-item">
+                                    <span class="label">Location:</span>
+                                    <span class="value">Lubuk Dalam, Riau</span>
+                                </div>
+                                <div class="info-item">
+                                    <span class="label">Email:</span>
+                                    <span class="value">aliefrezkyaditiya@gmail.com</span>
+                                </div>
+                                <div class="info-item">
+                                    <span class="label">Freelance:</span>
+                                    <span class="value available">Available</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SKILLS PAGE -->
+        <section id="skills" class="page">
+            <div class="container">
+                <div class="section-header" data-aos="fade-up">
+                    <span class="section-subtitle">My Expertise</span>
+                    <h2 class="section-title">Technical <span>Skills</span></h2>
+                    <p class="section-description">Mastering various technologies to build complete web solutions</p>
+                </div>
+
+                <!-- Frontend Skills -->
+                <div class="skills-category" data-aos="fade-up">
+                    <h3 class="category-title">
+                        <i class="ri-code-box-line"></i>
+                        Frontend Development
+                    </h3>
+                    <div class="skills-grid">
+                        <div class="skill-card">
+                            <div class="skill-icon html"><i class="fab fa-html5"></i></div>
+                            <div class="skill-info">
+                                <h4>HTML5</h4>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-progress="98"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="skill-card">
+                            <div class="skill-icon css"><i class="fab fa-css3-alt"></i></div>
+                            <div class="skill-info">
+                                <h4>CSS3</h4>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-progress="95"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="skill-card">
+                            <div class="skill-icon js"><i class="fab fa-js"></i></div>
+                            <div class="skill-info">
+                                <h4>JavaScript</h4>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-progress="92"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="skill-card">
+                            <div class="skill-icon react"><i class="fab fa-react"></i></div>
+                            <div class="skill-info">
+                                <h4>React.js</h4>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-progress="90"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="skill-card">
+                            <div class="skill-icon vue"><i class="fab fa-vuejs"></i></div>
+                            <div class="skill-info">
+                                <h4>Vue.js</h4>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-progress="85"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="skill-card">
+                            <div class="skill-icon angular"><i class="fab fa-angular"></i></div>
+                            <div class="skill-info">
+                                <h4>Angular</h4>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-progress="82"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="skill-card">
+                            <div class="skill-icon bootstrap"><i class="fab fa-bootstrap"></i></div>
+                            <div class="skill-info">
+                                <h4>Bootstrap</h4>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-progress="94"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="skill-card">
+                            <div class="skill-icon tailwind"><i class="fab fa-tailwind"></i></div>
+                            <div class="skill-info">
+                                <h4>Tailwind CSS</h4>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-progress="92"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Backend Skills -->
+                <div class="skills-category" data-aos="fade-up">
+                    <h3 class="category-title">
+                        <i class="ri-server-line"></i>
+                        Backend Development
+                    </h3>
+                    <div class="skills-grid">
+                        <div class="skill-card">
+                            <div class="skill-icon node"><i class="fab fa-node"></i></div>
+                            <div class="skill-info">
+                                <h4>Node.js</h4>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-progress="88"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="skill-card">
+                            <div class="skill-icon python"><i class="fab fa-python"></i></div>
+                            <div class="skill-info">
+                                <h4>Python</h4>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-progress="90"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="skill-card">
+                            <div class="skill-icon php"><i class="fab fa-php"></i></div>
+                            <div class="skill-info">
+                                <h4>PHP</h4>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-progress="85"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="skill-card">
+                            <div class="skill-icon csharp"><i class="fas fa-code"></i></div>
+                            <div class="skill-info">
+                                <h4>C#</h4>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-progress="80"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="skill-card">
+                            <div class="skill-icon cpp"><i class="fas fa-code"></i></div>
+                            <div class="skill-info">
+                                <h4>C++</h4>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-progress="75"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="skill-card">
+                            <div class="skill-icon sql"><i class="fas fa-database"></i></div>
+                            <div class="skill-info">
+                                <h4>SQL</h4>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-progress="87"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="skill-card">
+                            <div class="skill-icon mongo"><i class="fas fa-database"></i></div>
+                            <div class="skill-info">
+                                <h4>MongoDB</h4>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-progress="86"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="skill-card">
+                            <div class="skill-icon aws"><i class="fas fa-cloud"></i></div>
+                            <div class="skill-info">
+                                <h4>AWS</h4>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-progress="78"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tools -->
+                <div class="skills-category" data-aos="fade-up">
+                    <h3 class="category-title">
+                        <i class="ri-tools-line"></i>
+                        Tools & Technologies
+                    </h3>
+                    <div class="skills-grid">
+                        <div class="skill-card">
+                            <div class="skill-icon git"><i class="fab fa-git-alt"></i></div>
+                            <div class="skill-info">
+                                <h4>Git</h4>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-progress="92"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="skill-card">
+                            <div class="skill-icon docker"><i class="fab fa-docker"></i></div>
+                            <div class="skill-info">
+                                <h4>Docker</h4>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-progress="82"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="skill-card">
+                            <div class="skill-icon figma"><i class="fab fa-figma"></i></div>
+                            <div class="skill-info">
+                                <h4>Figma</h4>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-progress="88"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="skill-card">
+                            <div class="skill-icon three"><i class="fas fa-cube"></i></div>
+                            <div class="skill-info">
+                                <h4>Three.js</h4>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-progress="94"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PROJECTS PAGE -->
+        <section id="projects" class="page">
+            <div class="container">
+                <div class="section-header" data-aos="fade-up">
+                    <span class="section-subtitle">My Work</span>
+                    <h2 class="section-title">Featured <span>Projects</span></h2>
+                </div>
+
+                <div class="projects-grid">
+                    <div class="project-card" data-aos="fade-up">
+                        <img src="./images/project1.png" alt="Project 1">
+                        <div class="project-overlay">
+                            <h3>Coffee Website</h3>
+                            <p>Coffe Website Dengan Fitur Menarik</p>
+                            <div class="project-tags">
+                                <span>Html</span>
+                                <span>Css.js</span>
+                                <span>JavaScript</span>
+                            </div>
+                            <a href="https://web-coffee-three.vercel.app/" class="btn small">View Project</a>
+                        </div>
+                    </div>
+                    <div class="project-card" data-aos="fade-up" data-aos-delay="100">
+                        <img src="./images/project2.png" alt="Project 2">
+                        <div class="project-overlay">
+                            <h3>Rental Ps Website</h3>
+                            <p>Website Rental Ps Dengan Fitur komplit</p>
+                            <div class="project-tags">
+                                <span>Js</span>
+                                <span>Firebase</span>
+                                <span>Html</span>
+                            </div>
+                            <a href="https://rental-ps-lac.vercel.app/" class="btn small">View Project</a>
+                        </div>
+                    </div>
+                    <div class="project-card" data-aos="fade-up" data-aos-delay="200">
+                        <img src="./images/coomingsoon.png" alt="Project 3">
+                        <div class="project-overlay">
+                            <h3>Cooming Soon</h3>
+                            <p>Cooming Soon</p>
+                            <div class="project-tags">
+                                <span>-</span>
+                                <span>-</span>
+                                <span>-</span>
+                            </div>
+                            <a href="#" class="btn small">Cooming Soon</a>
+                        </div>
+                    </div>
+                    <div class="project-card" data-aos="fade-up" data-aos-delay="300">
+                        <img src="./images/coomingsoon.png" alt="Project 4">
+                        <div class="project-overlay">
+                            <h3>Cooming Soon</h3>
+                            <p>Cooming Soon</p>
+                            <div class="project-tags">
+                                <span>-</span>
+                                <span>-</span>
+                                <span>-</span>
+                            </div>
+                            <a href="#" class="btn small">Cooming Soon</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTACT PAGE -->
+        <section id="contact" class="page">
+            <div class="container">
+                <div class="section-header" data-aos="fade-up">
+                    <span class="section-subtitle">Get in Touch</span>
+                    <h2 class="section-title">Contact <span>Me</span></h2>
+                </div>
+
+                <div class="contact-wrapper">
+                    <div class="contact-info" data-aos="fade-right">
+                        <div class="contact-item">
+                            <i class="ri-map-pin-line"></i>
+                            <div>
+                                <h4>Location</h4>
+                                <p>Indonesia, Lubuk dalam</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="ri-mail-line"></i>
+                            <div>
+                                <h4>Email</h4>
+                                <p>aliefrezkiaditiya@gmail.com</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="ri-phone-line"></i>
+                            <div>
+                                <h4>Phone</h4>
+                                <p>+62 822 8473 1958</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <form class="contact-form" id="contactForm" data-aos="fade-left">
+                        <input type="text" placeholder="Your Name" required>
+                        <input type="email" placeholder="Your Email" required>
+                        <textarea rows="5" placeholder="Your Message" required></textarea>
+                        <button type="submit" class="btn primary">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Page Transition -->
+    <div class="page-transition"></div>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTop">
+        <i class="ri-arrow-up-line"></i>
+    </button>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
